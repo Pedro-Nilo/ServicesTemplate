@@ -1,0 +1,9 @@
+.vscode
+R1Services.Domain/obj
+R1Services.Domain/bin
+R1Services.Domain.Core/obj
+R1Services.Domain.Core/bin
+R1Services.Infra.Data/bin
+R1Services.Infra.Data/obj
+R1Services.Service/bin
+R1Services.Service/obj
