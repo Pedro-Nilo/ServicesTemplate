@@ -7,3 +7,5 @@ R1Services.Infra.Data/bin
 R1Services.Infra.Data/obj
 R1Services.Service/bin
 R1Services.Service/obj
+R1Services.Application.Captcha/bin
+R1Services.Application.Captcha/obj

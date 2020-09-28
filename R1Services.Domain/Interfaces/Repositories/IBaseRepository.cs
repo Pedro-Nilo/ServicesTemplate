@@ -15,6 +15,6 @@ namespace R1Services.Domain.Interfaces.Repositories
 
         void Update(TEntity obj);
 
-        Task<bool> SaveChangesAsync();
+        void Dispose();
      }
 }

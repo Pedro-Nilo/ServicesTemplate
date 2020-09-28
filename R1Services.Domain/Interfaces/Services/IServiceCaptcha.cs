@@ -1,4 +1,4 @@
-namespace R1Services.Domain.Core.Interfaces.Services
+namespace R1Services.Domain.Interfaces.Services
 {
     public interface IServiceCaptcha : IBaseService
     {
