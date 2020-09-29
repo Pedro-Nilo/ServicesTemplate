@@ -1,9 +1,9 @@
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using R1Services.Domain.Interfaces.Services;
-using R1Services.Domain.Models;
-
 
 namespace R1Services.Application.Captcha.Controllers
 {
@@ -22,14 +22,15 @@ namespace R1Services.Application.Captcha.Controllers
         [HttpGet]
         public IActionResult LivenessListener()
         {
-            return Ok("Captcha Service is read!");
+            return Ok("Captcha Service is ready!");
         }
 
         [HttpPost]
-        [Route("[controller]/request")]
-        public async Task<IActionResult> CaptchaRequest(RequestForm requestForm)
+        [Route("request")]
+        public async Task<IActionResult> CaptchaRequest(IFormCollection formCollection)
         {
-            var responseData = await _serviceCaptcha.Request(requestForm);
+            var jsonString = JsonSerializer.Serialize(formCollection);
+            var responseData = await _serviceCaptcha.Request(formCollection);
 
             return Ok(responseData);
         }

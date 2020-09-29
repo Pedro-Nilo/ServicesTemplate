@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using R1Services.Domain.Interfaces.Services;
 using R1Services.Domain.Interfaces.Repositories;
-using R1Services.Domain.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace R1Services.Service.Services
 {
@@ -30,7 +30,7 @@ namespace R1Services.Service.Services
             return "OK";
         }
 
-        public Task<string> Request(RequestForm requestForm)
+        public Task<string> Request(IFormCollection formCollection)
         {
             throw new System.NotImplementedException();
         }
