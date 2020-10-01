@@ -5,6 +5,8 @@ R1Services.Domain.Core/obj
 R1Services.Domain.Core/bin
 R1Services.Infra.Data/bin
 R1Services.Infra.Data/obj
+R1Services.Infra.CrossCutting/bin
+R1Services.Infra.CrossCutting/obj
 R1Services.Service/bin
 R1Services.Service/obj
 R1Services.API.Captcha/bin
