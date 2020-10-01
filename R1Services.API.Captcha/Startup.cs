@@ -6,18 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using R1Services.Domain.Interfaces.Repositories;
-using R1Services.Domain.Interfaces.Services;
-using R1Services.Infra.Data.Contexts;
-using R1Services.Infra.Data.Repositories;
-using R1Services.Service.Services;
 
-namespace R1Services.Application.Captcha
+namespace R1Services.API.Captcha
 {
     public class Startup
     {
@@ -31,12 +25,10 @@ namespace R1Services.Application.Captcha
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
             var connectionString = Configuration["ConnectionStrings:BooksDBConnectionString"];
 
+            services.AddControllers();
             services.AddDbContext<R1ServicesContext>(options => options.UseNpgsql(connectionString));
-
             services.AddScoped<IServiceCaptcha, ServiceCaptcha>();
             services.AddScoped<IRepositoryTransaction, RepositoryTransaction>();
         }

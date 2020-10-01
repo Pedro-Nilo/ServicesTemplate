@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace R1Services.Application.Captcha
+namespace R1Services.API.Captcha
 {
     public class Program
     {

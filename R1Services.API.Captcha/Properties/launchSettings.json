@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:20241",
-      "sslPort": 44381
+      "applicationUrl": "http://localhost:26121",
+      "sslPort": 44332
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "R1Services.Application.Captcha": {
+    "R1Services.API.Captcha": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "",
