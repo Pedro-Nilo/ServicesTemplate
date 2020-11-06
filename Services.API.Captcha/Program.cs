@@ -18,9 +18,19 @@ namespace Services.API.Captcha
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(SetupConfiguration)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static void SetupConfiguration(HostBuilderContext hostBuilderContext, IConfigurationBuilder builder)
+        {
+            builder.Sources.Clear();
+
+            builder.AddJsonFile("appsettings.json", false, true)
+                   .AddXmlFile("config.xml", true)
+                   .AddEnvironmentVariables();
+        }
     }
 }

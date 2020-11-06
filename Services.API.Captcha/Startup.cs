@@ -19,8 +19,6 @@ namespace Services.API.Captcha
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["ConnectionStrings:BooksDBConnectionString"];
-
             services.AddControllers();
             services.AddPostgreSqlDependency(Configuration);
             services.AddServiceCaptchaDependency();

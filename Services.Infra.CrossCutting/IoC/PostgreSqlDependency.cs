@@ -11,9 +11,9 @@ namespace Services.Infra.CrossCutting.IoC
         {
             services.AddDbContext<ServicesContext>(options =>
             {
-                var connectionString = configuration["ConnectionStrings:BooksDBConnectionString"];
+                var connectionString = configuration["ConnectionStrings:ServicesConnectionString"];
 
-                options.UseNpgsql(connectionString);
+                options.UseNpgsql(connectionString, context => context.MigrationsAssembly("Services.API.Captcha"));
             });
         }
     }
